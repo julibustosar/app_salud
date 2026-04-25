@@ -3,7 +3,7 @@ import '../../domain/repositories/habit_repository.dart';
 import '../datasources/habit_remote_datasource.dart';
 
 class HabitRepositoryImp implements HabitRepository {
-  final HabitRemoteDatasource remoteDataSource;
+  final HabitRemoteDataSource remoteDataSource;
 
   HabitRepositoryImp(this.remoteDataSource);
 
