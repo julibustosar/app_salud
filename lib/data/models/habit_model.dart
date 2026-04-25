@@ -22,7 +22,6 @@ class HabitModel extends Habit {
       'name': name,
       'frequency': frequency,
       'isCompleted': isCompleted,
-      // No enviamos el ID al crear, recuerda que la API lo genera
     };
   }
 }

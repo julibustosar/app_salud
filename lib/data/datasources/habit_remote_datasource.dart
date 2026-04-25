@@ -13,7 +13,6 @@ class HabitRemoteDataSource {
       // Le decimos a Dart que esto es una Lista dinámica
       final List<dynamic> jsonResponse = json.decode(response.body);
       
-      // SOLUCIÓN AQUÍ: Usamos "as Map<String, dynamic>" para calmar a Dart
       return jsonResponse.map((habit) => 
         HabitModel.fromJson(habit as Map<String, dynamic>)
       ).toList();
@@ -24,7 +23,6 @@ class HabitRemoteDataSource {
   }
 
   Future<void> addHabit(Habit habit) async {
-    // Nos aseguramos de crear explícitamente un HabitModel
     final habitModel = HabitModel(
       id: habit.id, 
       name: habit.name, 
@@ -35,7 +33,6 @@ class HabitRemoteDataSource {
     final response = await http.post(
       Uri.parse('$baseUrl/habits'),
       headers: {"Content-Type": "application/json"},
-      // SOLUCIÓN AQUÍ: Ahora habitModel sabe perfectamente que tiene toJson()
       body: json.encode(habitModel.toJson()),
     );
 
