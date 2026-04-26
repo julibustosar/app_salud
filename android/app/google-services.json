@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1011020440970",
+    "project_id": "app-salud-7e77d",
+    "storage_bucket": "app-salud-7e77d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011020440970:android:607575e3ec393d759ad473",
+        "android_client_info": {
+          "package_name": "com.example.tienda_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFg4hlOxPrm4imQrjLVJyMriw42kuytpo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
