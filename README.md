@@ -44,8 +44,8 @@ El proyecto fue construido siguiendo los principios de **Clean Architecture** pa
 <p align="center">
   <table align="center">
     <tr>
-      <td><img src="assets/images/captura1.png" width="200"><br align="center">Login</td>
-      <td><img src="assets/images/captura2.png" width="200"><br align="center">Dashboard</td>
+      <td><img src="assets/images/captura1.png" width="200"><br align="center">Dashboard</td>
+      <td><img src="assets/images/captura2.png" width="200"><br align="center">Perfil y notificación</td>
       <td><img src="assets/images/captura3.png" width="200"><br align="center">Estadísticas</td>
     </tr>
   </table>
