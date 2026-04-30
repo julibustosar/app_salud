@@ -1,9 +1,9 @@
 import 'package:go_router/go_router.dart';
 import 'package:tienda_app/presentation/screens/add_habit.dart';
 import 'package:tienda_app/presentation/screens/login.dart';
+import 'package:tienda_app/presentation/screens/main_screen.dart';
 import 'package:tienda_app/presentation/screens/profile.dart';
 import 'package:tienda_app/presentation/screens/statistics.dart';
-import 'package:tienda_app/presentation/screens/dashboard.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/login',
@@ -13,7 +13,7 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: '/dashboard',
-      builder: (context, state) => const DashboardScreen(),
+      builder: (context, state) => const MainScreen(),
     ),
     GoRoute(
       path: '/add-habit',

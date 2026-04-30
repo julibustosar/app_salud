@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tienda_app/data/datasources/habit_remote_datasource.dart';
-import 'package:tienda_app/domain/get_habits_use_case.dart';
-import 'package:tienda_app/domain/add_habits_use_case.dart';
+import 'package:tienda_app/domain/delete_habit_use_case.dart';
+import 'package:tienda_app/domain/get_habit_use_case.dart';
+import 'package:tienda_app/domain/add_habit_use_case.dart';
+import 'package:tienda_app/domain/update_habit_use_case.dart';
 import 'package:tienda_app/presentation/providers/habit_provider.dart';
 import 'package:tienda_app/data/repositories/habit_repository_imp.dart';
 import 'package:tienda_app/presentation/router/app_router.dart';
@@ -12,9 +14,13 @@ import 'domain/login_use_case.dart';
 import 'firebase_options.dart';
 import 'data/datasources/auth_remote_datasource.dart';
 import 'presentation/providers/auth_provider.dart';
+import 'services/notificacion_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await NotificationService.init();
+  
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -23,6 +29,8 @@ void main() async {
   final repository = HabitRepositoryImp(remoteDataSource);
   final getHabitsUseCase = GetHabitsUseCase(repository);
   final addHabitUseCase = AddHabitsUseCase(repository);
+  final updateHabitUseCase = UpdateHabitUseCase(repository);
+  final deleteHabitUseCase = DeleteHabitUseCase(repository);
   final authRemoteDataSource = AuthRemoteDataSource();
   final authRepository = AuthRepositoryImp(authRemoteDataSource);
   final loginUseCase = LoginUseCase(authRepository);
@@ -34,6 +42,8 @@ void main() async {
           create: (_) => HabitProvider(
             getHabitsUseCase: getHabitsUseCase,
             addHabitUseCase: addHabitUseCase,
+            updateHabitUseCase: updateHabitUseCase,
+            deleteHabitUseCase: deleteHabitUseCase,
           ),
         ),
         ChangeNotifierProvider(

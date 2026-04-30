@@ -19,6 +19,12 @@ class HabitRepositoryImp implements HabitRepository {
   
   @override
   Future<void> updateHabit(Habit habit) async {
-
+    await remoteDataSource.updateHabit(habit);
   }
+
+  @override
+  Future<void> deleteHabit(String id) async {
+    await remoteDataSource.deleteHabit(id);
+  }
+
 }
